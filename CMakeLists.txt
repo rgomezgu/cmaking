@@ -92,5 +92,12 @@ include (InstallRequiredSystemLibraries)
 set (CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/License.txt")
 set (CPACK_PACKAGE_VERSION_MAJOR "${Tutorial_VERSION_MAJOR}")
 set (CPACK_PACKAGE_VERSION_MINOR "${Tutorial_VERSION_MINOR}")
+
+# add the generation of a .deb package 
+set (CPACK_PACKAGE_NAME "sqrt-app") # Nombre del paquete. Se convierte a minusculas. Obligatorio
+set (CPACK_PACKAGE_VERSION  1.0) # Version del paquete. Obligatorio
+set (CPACK_DEBIAN_PACKAGE_MAINTAINER "Ruben Gomez <ruben.gomez@enigmedia.es>") #required
+set(CPACK_GENERATOR "DEB")
+
 include (CPack)
 
